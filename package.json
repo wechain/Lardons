@@ -1,21 +1,24 @@
 {
   "name": "docker-strapi-nuxt-mongo",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Kevin J <hi@juke.fr>",
   "license": "MIT",
   "scripts": {
     "start": "docker-compose up -d",
     "log": "docker-compose logs -f",
     "logs": "docker-compose logs -f",
-    "stop": "docker-compose down",
+    "stop": "npm run client:stop && npm run server:stop && docker-compose down",
 
     "client:add": "docker-compose run client npm --prefix /usr/app/client i -s",
     "client:restart": "docker-compose exec client pm2 restart client",
+    "client:start": "docker-compose exec client pm2 start client",
+    "client:stop": "docker-compose exec client pm2 stop client",
     "client:shell": "docker-compose exec client bash",
 
     "server:add": "docker-compose run server npm --prefix /usr/app/server run strapi install",
     "server:restart": "docker-compose exec server pm2 restart server",
+    "server:stop": "docker-compose exec server pm2 stop server",
+    "server:start": "docker-compose exec server pm2 start server",
     "server:shell": "docker-compose exec server bash"
   }
 }
