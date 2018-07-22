@@ -42,12 +42,3 @@ yarn server:logs                    # pm2 logs server
 3. this image is used on docker-compose with a mongo instance for the server
 
 _(alot of behind the scenes magic is going on to have the correct permissions for linux development, your user needs to be in the docker group and you're set)_
-
-## Future improvements
-add STAGE env var and set entrypoint commands accordingly for dev, prod and staging 
-
-for dev we need nuxt with watch
-
-for prod build 
-
-etc.
