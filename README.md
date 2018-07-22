@@ -26,10 +26,3 @@ yarn server:stop
 yarn server:shell
 yarn server:logs
 ```
-
-### under linux
-if you have permission problems try occasionnaly running
-```
-yarn perms
-```
-

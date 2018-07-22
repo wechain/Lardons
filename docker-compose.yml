@@ -14,9 +14,7 @@ services:
     ports:
       - "${SERVER_PORT}:1337"
     volumes:
-      - ./server:/app/server
-      - ./bin/server.sh:/app/entrypoint.sh
-      - ./bin/strapi.exp:/app/strapi.exp
+      - ./:/home/default
   client:
     depends_on:
       - server
@@ -27,6 +25,4 @@ services:
     ports:
       - "${CLIENT_PORT}:3000"
     volumes:
-      - ./client:/app/client
-      - ./bin/client.sh:/app/entrypoint.sh
-      - ./bin/vue-cli.exp:/app/vue-cli.exp
+      - ./:/home/default

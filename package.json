@@ -7,8 +7,7 @@
     "start": "docker-compose up -d",
     "logs": "docker-compose logs -f",
     "stop": "npm run client:stop && npm run server:stop && docker-compose down",
-    "perms" : "npm run client:perms && npm run server:perms",
-    "hard-reset": "sudo rm -rf ./db && sudo rm -rf ./client && sudo rm -rf ./server",
+    "hard-reset": "sudo rm -rf ./db && rm -rf ./client && rm -rf ./server",
 
     "client:add": "docker-compose run client npm --prefix /usr/app/client i -s",
     "client:restart": "docker-compose exec client pm2 restart client",
@@ -16,7 +15,6 @@
     "client:stop": "docker-compose exec client pm2 stop client",
     "client:shell": "docker-compose exec client bash",
     "client:logs": "docker-compose logs client",
-    "client:perms": "docker-compose exec client chown -R 1000:root /app",
 
     "server:add": "docker-compose run server npm --prefix /usr/app/server run strapi install",
     "server:restart": "docker-compose exec server pm2 restart server",
@@ -24,6 +22,5 @@
     "server:start": "docker-compose exec server pm2 start server",
     "server:shell": "docker-compose exec server bash",
     "server:logs": "docker-compose logs server",
-    "server:perms": "docker-compose exec server chown -R 1000:root /app"
   }
 }
