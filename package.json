@@ -6,7 +6,7 @@
   "scripts": {
     "start": "docker-compose up -d",
     "logs": "docker-compose logs -f",
-    "stop": "npm run client:stop && npm run server:stop && docker-compose down",
+    "stop": "docker-compose exec node pm2 stop all && docker-compose down",
 
     "client:add": "docker-compose exec node npm --prefix /home/default/client i -s",
     "client:restart": "docker-compose exec node pm2 restart client",
