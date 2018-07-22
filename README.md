@@ -36,7 +36,13 @@ yarn server:logs
 ```
 
 ## How it works
-placeholder
+1. dockerfile builds an image that has node, strapi, nuxt and pm2
+2. this image has an entrypoint that checks if strapi or nuxt boilerplates are present
+    1. if not, it installs them and automatically generates the boilerplates
+    2. if yes, starts pm2 processes on the node container for client and server
+3. this image is used on docker-compose with a mongo instance for the server
+
+_(alot of behind the scenes magic is going on to have the correct permissions for linux development, your user needs to be in the docker group and you're set)_
 
 ## Future improvements
 add STAGE env var and set entrypoint commands accordingly for dev, prod and staging 
