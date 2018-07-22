@@ -4,13 +4,22 @@ _"full stack framework"_ for the modern times
 
 **This is absolutely not safe in any manner for production. Use only for local dev.**
 
-## Instructions
+## Overview
+This is a docker-compose based stack that runs :
+- [mongodb](https://github.com/mongodb/mongo) 
+- [strapi](https://github.com/strapi/strapi) 
+- [nuxt](https://github.com/nuxt/nuxt.js) 
+
+Aimed at development only for now.
+Start fullstacking in under 5 minutes with this boilerplate 🎉
+
+## Usage
 0. (**requirement**) `docker-compose` installed
 1. configure the `.env` variables
 2. run `yarn start` or `npm start`
 3. (_optional_) if you just cloned the repo, everything (strapi + mongo + nuxt) will be generated the first time you start the app, this takes a little time, check the progress out using `yarn logs`
 
-## Scripts
+## Commands
 ```bash
 # YARN = NPM RUN
 
@@ -33,7 +42,7 @@ yarn server:restart                 # pm2 restart server
 yarn server:logs                    # pm2 logs server
 ```
 
-## How it works
+## Architecture
 1. dockerfile builds an image that has node, strapi, nuxt and pm2
 2. this image has an entrypoint that checks if strapi or nuxt boilerplates are present
     1. if not, it installs them and automatically generates the boilerplates
@@ -41,3 +50,6 @@ yarn server:logs                    # pm2 logs server
 3. this image is used on docker-compose with a mongo instance for the server
 
 _(alot of behind the scenes magic is going on to have the correct permissions for linux development, your user needs to be in the docker group and you're set)_
+
+## Other Resources
+[inspired by this article](https://blog.strapi.io/cooking-a-deliveroo-clone-with-nuxt-vue-js-graphql-strapi-and-stripe-setup-part-1-7/)
