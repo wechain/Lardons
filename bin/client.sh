@@ -16,4 +16,5 @@ else
     sudo chmod -R g+w /usr/app/client
 fi
 
-npm run dev
+
+pm2-runtime start npm --name "client" -- run dev

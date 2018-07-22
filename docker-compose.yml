@@ -2,9 +2,27 @@ version: '3'
 services:
   db:
     image: mongo
+    expose:
+      - 27017
     volumes:
       - ./db:/data/db
+  server:
+    depends_on:
+      - db
+    environment:
+      - HOST=0.0.0.0
+    build:
+      context: ./bin
+      dockerfile: server.dockerfile
+    ports:
+      - "4201:1337"
+    volumes:
+      - ./server:/usr/app/server
+      - ./bin/server.sh:/usr/app/entrypoint.sh
+      - ./bin/strapi.exp:/usr/app/strapi.exp
   client:
+    depends_on:
+      - server
     environment:
       - HOST=0.0.0.0
     build:
@@ -16,11 +34,3 @@ services:
       - ./client:/usr/app/client
       - ./bin/client.sh:/usr/app/entrypoint.sh
       - ./bin/vue-cli.exp:/usr/app/vue-cli.exp
-  server:
-    image: node
-    user: node
-    working_dir: /src/app/server
-    entrypoint: ./entrypoint.sh
-    volumes:
-      - ./bin/server.sh:/src/app/server/entrypoint.sh
-      - ./server:/src/app/server
