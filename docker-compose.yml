@@ -1,0 +1,26 @@
+version: '3'
+services:
+  db:
+    image: mongo
+    volumes:
+      - ./db:/data/db
+  client:
+    environment:
+      - HOST=0.0.0.0
+    build:
+      context: ./bin
+      dockerfile: client.dockerfile
+    ports:
+      - "4200:3000"
+    volumes:
+      - ./client:/usr/app/client
+      - ./bin/client.sh:/usr/app/entrypoint.sh
+      - ./bin/vue-cli.exp:/usr/app/vue-cli.exp
+  server:
+    image: node
+    user: node
+    working_dir: /src/app/server
+    entrypoint: ./entrypoint.sh
+    volumes:
+      - ./bin/server.sh:/src/app/server/entrypoint.sh
+      - ./server:/src/app/server
