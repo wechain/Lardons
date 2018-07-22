@@ -1,6 +1,5 @@
 # 🥓 Lardons
 **[strapi, mongo, nuxt, docker-compose]**
-
 _"full stack framework"_ for the modern times
 
 **This is absolutely not safe in any manner for production. Use only for local dev.**
