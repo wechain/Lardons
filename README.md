@@ -19,14 +19,15 @@ yarn start
 yarn logs
 yarn stop
 
-yarn client:add bootstrap@4.1.1 # npm install
+yarn client:add bootstrap@4.1.1 # npm install bootstrap
 yarn client:restart
 yarn client:start
 yarn client:stop
 yarn client:shell
 yarn client:logs
 
-yarn server:add graphql # strapi install
+yarn server:strapi <command>
+yarn server:add graphql # strapi install graphql
 yarn server:restart
 yarn server:start
 yarn server:stop

@@ -16,6 +16,7 @@
     "client:logs": "docker-compose exec node pm2 logs client",
 
     "server:add": "docker-compose exec node npm --prefix /home/default/server run strapi install",
+    "server:strapi": "docker-compose exec node npm --prefix /home/default/server run strapi",
     "server:restart": "docker-compose exec node pm2 restart server",
     "server:stop": "docker-compose exec node pm2 stop server",
     "server:start": "docker-compose exec node pm2 start server",
