@@ -14,25 +14,27 @@ _"full stack framework"_ for the modern times
 ## Scripts
 ```bash
 # yarn = npm run
+# all of these run OUTSIDE the CONTAINER
 
-yarn start
-yarn logs
-yarn stop
+yarn start              # docker-compose up -d
+yarn logs               # docker-compose logs -f
+yarn shell              # docker-compose exec node sh
+yarn stop               # docker-compose down
 
-yarn client:add bootstrap@4.1.1 # npm install bootstrap
-yarn client:restart
-yarn client:start
-yarn client:stop
-yarn client:shell
-yarn client:logs
+# all of these run INSIDE the CONTAINER
 
-yarn server:strapi <command>
-yarn server:add graphql # strapi install graphql
-yarn server:restart
-yarn server:start
-yarn server:stop
-yarn server:shell
-yarn server:logs
+yarn client:add bootstrap@4.1.1     # npm install bootstrap
+yarn client:restart                 # pm2 restart client
+yarn client:start                   # pm2 start client
+yarn client:stop                    # pm2 stop client
+yarn client:logs                    # pm2 logs client
+
+yarn server:strapi <command>    # strapi <command>
+yarn server:add graphql         # strapi install graphql
+yarn server:restart             # pm2 restart server
+yarn server:start               # pm2 start server
+yarn server:stop                # pm2 stop server
+yarn server:logs                # pm2 logs server
 ```
 
 ## How it works
