@@ -4,25 +4,14 @@ services:
     image: mongo
     volumes:
       - ./db:/data/db
-  server:
+  node:
     depends_on:
       - db
-    env_file: .env
     build:
       context: ./bin
-      dockerfile: server.dockerfile
+      dockerfile: Dockerfile
     ports:
       - "${SERVER_PORT}:1337"
-    volumes:
-      - ./:/home/default
-  client:
-    depends_on:
-      - server
-    env_file: .env
-    build:
-      context: ./bin
-      dockerfile: client.dockerfile
-    ports:
       - "${CLIENT_PORT}:3000"
     volumes:
       - ./:/home/default

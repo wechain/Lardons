@@ -9,5 +9,12 @@ else
     cd client && npm i && cd ..
 fi
 
-cd client
-pm2-runtime start npm --name "client" -- run dev
+if [ -d server/node_modules ]
+then
+    echo "Server already present. Skipping bootstrapping phase."
+else
+    echo "Server not present. Starting bootstrapping phase."
+    expect bin/strapi.exp
+fi
+
+pm2-runtime ecosystem.config.js

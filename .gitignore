@@ -7,3 +7,4 @@ client/
 \.npm/
 \.pm2/
 \.vue-templates/
+\.ash_history

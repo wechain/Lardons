@@ -11,19 +11,15 @@ RUN adduser -D default; \
 WORKDIR /home/default
 USER default:docker
 
-COPY server.sh bin/server.sh
-COPY strapi.exp bin/strapi.exp
-
 RUN sudo apk add --update nodejs npm expect git
 
+RUN mkdir -p client
 RUN mkdir -p server
 
-RUN sudo npm i -g strapi@alpha
-RUN sudo npm i -g pm2
+RUN sudo npm i -g vue-cli pm2 strapi@alpha
 
 RUN sudo chown -R default:docker . ;\
     sudo chgrp -R docker . ; \
     find . -type d | sudo xargs chmod g+w
 
-EXPOSE 1337
-ENTRYPOINT ./bin/server.sh
+ENTRYPOINT ./bin/entrypoint.sh
