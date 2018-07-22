@@ -1,9 +1,8 @@
 #!/usr/bin/expect
-set timeout 10
+set timeout 60
 
-spawn vue init nuxt-community/starter-template .
-
-expect "Generate project in current directory?"
+spawn vue init nuxt-community/starter-template client
+expect "exist"
 send "\r"
 expect "downloading template"
 send "\r"

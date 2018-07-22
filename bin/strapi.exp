@@ -47,7 +47,5 @@ expect "Your new application"
 send "\r"
 expect "change directory"
 send "\r"
-expect "start application"
-send "\r"
 interact
 
