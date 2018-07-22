@@ -52,4 +52,4 @@ yarn server:logs                    # pm2 logs server
 _(alot of behind the scenes magic is going on to have the correct permissions for linux development, your user needs to be in the docker group and you're set)_
 
 ## Other Resources
-[inspired by this article](https://blog.strapi.io/cooking-a-deliveroo-clone-with-nuxt-vue-js-graphql-strapi-and-stripe-setup-part-1-7/)
+[inspired by this article](https://blog.strapi.io/cooking-a-deliveroo-clone-with-nuxt-vue-js-graphql-strapi-and-stripe-setup-part-1-7/), try following this guide to get a feel of what you can achieve using this stack in minutes.
