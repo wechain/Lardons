@@ -5,11 +5,16 @@
   "author": "Kevin J <hi@juke.fr>",
   "license": "MIT",
   "scripts": {
+    "start": "docker-compose up -d",
+    "log": "docker-compose logs -f",
+    "logs": "docker-compose logs -f",
+    "stop": "docker-compose down",
+
     "client:add": "docker-compose run client npm --prefix /usr/app/client i -s",
     "client:restart": "docker-compose exec client pm2 restart client",
     "client:shell": "docker-compose exec client bash",
 
-    "server:add": "docker-compose run server npm --prefix /usr/app/server i -s",
+    "server:add": "docker-compose run server npm --prefix /usr/app/server run strapi install",
     "server:restart": "docker-compose exec server pm2 restart server",
     "server:shell": "docker-compose exec server bash"
   }
