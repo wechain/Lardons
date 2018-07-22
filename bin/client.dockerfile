@@ -1,5 +1,6 @@
 FROM alpine
 
+# add capacity to run command as sudo and add user to docker group (for linux dev)
 RUN apk add --update sudo shadow
 RUN adduser -D default; \
     addgroup docker; \
