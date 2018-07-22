@@ -6,13 +6,13 @@
   "scripts": {
     "start": "docker-compose up -d",
     "logs": "docker-compose logs -f",
+    "shell": "docker-compose exec node sh",
     "stop": "docker-compose exec node pm2 stop all && docker-compose down",
 
     "client:add": "docker-compose exec node npm --prefix /home/default/client i -s",
     "client:restart": "docker-compose exec node pm2 restart client",
     "client:start": "docker-compose exec node pm2 start client",
     "client:stop": "docker-compose exec node pm2 stop client",
-    "client:shell": "docker-compose exec node sh",
     "client:logs": "docker-compose exec node pm2 logs client",
 
     "server:add": "docker-compose exec node npm --prefix /home/default/server run strapi install",
@@ -20,7 +20,6 @@
     "server:restart": "docker-compose exec node pm2 restart server",
     "server:stop": "docker-compose exec node pm2 stop server",
     "server:start": "docker-compose exec node pm2 start server",
-    "server:shell": "docker-compose exec node sh",
     "server:logs": "docker-compose exec node pm2 logs server"
   }
 }
