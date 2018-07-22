@@ -1,12 +1,11 @@
 # 🥓 Lardons
 **[strapi, mongo, nuxt, docker-compose]**
-
 _"full stack framework"_ for the modern times
 
 **This is absolutely not safe in any manner for production. Use only for local dev.**
 
 ## Instructions
-0. (**requirement**) **docker-compose** installed
+0. (**requirement**) `docker-compose` installed
 1. configure the `.env` variables
 2. run `yarn start` or `npm start`
 3. (_optional_) if you just cloned the repo, everything (strapi + mongo + nuxt) will be generated the first time you start the app, this takes a little time, check the progress out using `yarn logs`
