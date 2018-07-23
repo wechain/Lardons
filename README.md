@@ -14,7 +14,7 @@ Aimed at development only for now.
 Start fullstacking in under 5 minutes with this boilerplate 🎉
 
 ## Usage
-0. (**requirement**) `docker-compose` installed
+0. (**requirement**) latest `docker-compose` installed [github releases here](https://github.com/docker/compose/releases)
 1. configure the `.env` variables
 2. run `yarn start` or `npm start`
 3. (_optional_) if you just cloned the repo, everything (strapi + mongo + nuxt) will be generated the first time you start the app, this takes a little time, check the progress out using `yarn logs`
