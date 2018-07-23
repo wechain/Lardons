@@ -11,7 +11,7 @@ RUN adduser -D default; \
 WORKDIR /home/default
 USER default:docker
 
-RUN sudo apk add --update nodejs npm expect git
+RUN sudo apk add --update nodejs-current npm expect git
 
 RUN mkdir -p client
 RUN mkdir -p server
