@@ -36,8 +36,8 @@ yarn client:add bootstrap@4.1.1     # npm install bootstrap
 yarn client:restart                 # pm2 restart client
 yarn client:logs                    # pm2 logs client
 ###################################################################
-yarn server:strapi <command>        # strapi <command>          (broken ATM see issue #2, exec manually inside the container)
-yarn server:add graphql             # strapi install graphql    (broken ATM see issue #2, exec manually inside the container)
+yarn server:strapi <command>        # strapi <command>          (broken see #2, exec manually inside the container)
+yarn server:add graphql             # strapi install graphql    (broken see #2, exec manually inside the container)
 yarn server:restart                 # pm2 restart server
 yarn server:logs                    # pm2 logs server
 ```
